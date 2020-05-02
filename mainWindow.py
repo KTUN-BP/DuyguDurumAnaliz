@@ -3,7 +3,6 @@ import settings
 from PyQt5 import uic
 from PyQt5.QtCore import pyqtSlot
 from PyQt5.QtWidgets import QMainWindow, QComboBox
-
 from pictureFileDialog import PictureFileDialog
 from videoCaptureDialog import VideoCaptureDialog
 from videoFileDialog import VideoFileDialog

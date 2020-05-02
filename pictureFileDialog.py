@@ -4,7 +4,6 @@ from PyQt5 import uic
 from PyQt5.QtCore import pyqtSlot, Qt
 from PyQt5.QtGui import QImage, QPixmap
 from PyQt5.QtWidgets import QDialog, QFileDialog
-
 from pictureThread import PictureThread
 
 

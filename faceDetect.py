@@ -1,9 +1,8 @@
 import cv2
-from keras_preprocessing.image import img_to_array
-
 import settings
 import numpy as np
 
+from keras_preprocessing.image import img_to_array
 from tensorflow.keras.models import load_model
 
 
