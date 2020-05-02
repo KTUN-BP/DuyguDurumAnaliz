@@ -9,7 +9,7 @@ Bir görüntü kaynağından elde edilen video ve fotoğraflar üzerindeki insan
 ## Geliştirenler
 - [Muharrem ERİN - 185036024](https://github.com/mewebstudio)
 - [Berk Mükremin KARAÇAYIR - 185036070](https://github.com/berkmkaracayir)
-- [Mahmut ÖZDAĞ - 185036040](https://github.com/KTUN-BP)
+- [Mahmut ÖZDAĞ - 185036040](https://github.com/Ozdg)
 
 ## Altyapı
 - [Python 3.7+](https://www.python.org/)
