@@ -39,7 +39,7 @@ class PictureThread(QThread):
         detect = face_detect.run(frame, self.flip)
 
         # Görüntü renklerini düzenliyoruz
-        frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        frame = cv2.cvtColor(detect, cv2.COLOR_BGR2RGB)
 
         # Görüntüyü QT objesine aktarıyoruz
         h, w, ch = frame.shape
