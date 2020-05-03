@@ -3,7 +3,7 @@
 ![Sunum](https://i.ibb.co/PTyNRsf/splash.png)
 
 ## Proje Tanımı
-Bir görüntü kaynağından elde edilen video ve fotoğraflar üzerindeki insan yüzleri üzerinde duygu durum analizi yapan program.
+Bir görüntü kaynağından elde edilen video ve fotoğraflar üzerindeki insan yüzlerinden duygu durum analizi yapan program.
 
 ## Sorumlu Öğretim Üyesi
 [Dr. Öğr. Üyesi LEVENT CİVCİK](http://ktun.edu.tr/PersonelBilgi/Index/NDk0OTUxMjI4MDQ=)
