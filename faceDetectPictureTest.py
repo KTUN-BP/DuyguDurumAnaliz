@@ -5,7 +5,7 @@ from faceDetect import FaceDetect
 
 def main():
     # OpenCV ile görüntü yakalamak için WebCam'i kullanıyoruz
-    capture = cv2.imread('./data/test/pictures/elon-musk.jpg')
+    capture = cv2.imread('./data/test/pictures/01.jpg')
 
     frame = cv2.resize(capture, (600, 800))
 
