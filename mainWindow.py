@@ -39,8 +39,8 @@ class MainWindow(QMainWindow):
     @pyqtSlot()
     def on_pushButtonResourceStart_clicked(self):
         if self.source == 'picture':
-            pictureCaptureDialog = PictureFileDialog()
-            pictureCaptureDialog.exec_()
+            pictureFileDialog = PictureFileDialog()
+            pictureFileDialog.exec_()
         elif self.source == 'camera':
             videoCaptureDialog = VideoCaptureDialog()
             videoCaptureDialog.exec_()
