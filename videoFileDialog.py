@@ -43,6 +43,7 @@ class VideoFileDialog(QDialog):
             filenames = file_dialog.selectedFiles()
             self.labelSelectedFileName.setText(os.path.basename(filenames[0]))
             self.videoThread.setPath(filenames[0])
+            self.Window.labelVideoFrame.setText('İşleniyor, lütfen bekleyin...')
             self.videoThread.start()
 
     @pyqtSlot()
