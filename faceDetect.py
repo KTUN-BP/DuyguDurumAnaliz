@@ -87,8 +87,6 @@ class FaceDetect:
                     'emotions': emotions,
                 }
 
-                # print(label)
-
                 # Bulunan yüze uygulayacağımız çerçeveyi oluşturuyoruz
                 cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
 
