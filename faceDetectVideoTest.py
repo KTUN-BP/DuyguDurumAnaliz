@@ -15,8 +15,10 @@ def main():
         # Her döngü yenilenmesinde bir kare alıyoruz
         ret, frame = capture.read()
 
+        detect = face_detect.run(frame)['frame'];
+
         # Görüntü çıktısını alıyoruz
-        cv2.imshow('frame', face_detect.run(frame))
+        cv2.imshow('frame', detect)
 
         # Q tuşu ile döngünün kırılmasını sağlıyoruz
         if cv2.waitKey(1) & 0xFF == ord('q'):

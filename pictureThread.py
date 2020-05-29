@@ -11,9 +11,16 @@ class PictureThread(QThread):
     capture = None
     path = None
     flip = False
+    options = {
+        'genders': [],
+        'emotions': [],
+    }
 
     def setPath(self, path):
         self.path = path
+
+    def setOptions(self, options):
+        self.options = options
 
     def getCapture(self):
         self.capture = cv2.imread(self.path)
@@ -36,7 +43,7 @@ class PictureThread(QThread):
         frame = imutils.resize(capture, 800)
 
         # Yüz tanıma sınıfımızı kullanarak görüntüyü alıyoruz
-        detect = face_detect.run(frame, self.flip)
+        detect = face_detect.run(frame=frame, flip=self.flip, options=self.options)['frame']
 
         # Görüntü renklerini düzenliyoruz
         frame = cv2.cvtColor(detect, cv2.COLOR_BGR2RGB)

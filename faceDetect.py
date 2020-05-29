@@ -7,6 +7,11 @@ from tensorflow.keras.models import load_model
 
 
 class FaceDetect:
+    options = {
+        'genders': [],
+        'emotions': [],
+    }
+
     def __init__(self):
         # Yüz tespiti için gerekli XML verisi
         self.face_cascade = cv2.CascadeClassifier(settings.DATA['cascades']['face'])
@@ -23,8 +28,11 @@ class FaceDetect:
         # Cinsiyet modeli
         self.gender_model = load_model(settings.DATA['models']['gender'], compile=False)
 
-    def run(self, frame, flip=False, _eyes=False, _smiles=False):
+    def run(self, frame, flip=False, options=None, _eyes=False, _smiles=False):
         # Görüntüyü aynalıyoruz
+        if options is None:
+            options = self.options
+
         if flip is True:
             frame = cv2.flip(frame, 1)
 
@@ -33,6 +41,8 @@ class FaceDetect:
 
         # Oluşturulan gri görüntüden yüzleri tespit ediyoruz
         faces = self.face_cascade.detectMultiScale(gray, 1.3, 5)
+
+        label = {}
 
         # Her bulunan yüz üzerinde işlem yapmak için bir döngü kullanıyoruz
         if len(faces) > 0:
@@ -88,15 +98,18 @@ class FaceDetect:
                 }
 
                 # Bulunan yüze uygulayacağımız çerçeveyi oluşturuyoruz
-                cv2.rectangle(frame, (x, y), (x + w, y + h), (255, 0, 0), 2)
+                if gender_predict.argmax() in options['genders'] or emotion_predict.argmax() in options['emotions']:
+                    cv2.rectangle(frame, (x, y), (x + w, y + h), (0, 0, 255), 1)
 
                 # Cinsiyet verisini görüntüye yazdırıyoruz
-                cv2.putText(frame, str(label['gender']['title']) + ' (%' + str(label['gender']['percent']) + ')',
-                            (x, y - 30), cv2.FONT_HERSHEY_SIMPLEX, .8, (255, 0, 0), 2)
+                if gender_predict.argmax() in options['genders']:
+                    cv2.putText(frame, str(label['gender']['title']) + ' (%' + str(label['gender']['percent']) + ')',
+                                (x, y - 20), cv2.FONT_HERSHEY_SIMPLEX, .4, (0, 0, 255), 1)
 
                 # Duygu verisini görüntüye yazdırıyoruz
-                cv2.putText(frame, str(label['emotion']['title']) + ' (%' + str(label['emotion']['percent']) + ')',
-                            (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, .8, (255, 0, 0), 2)
+                if emotion_predict.argmax() in options['emotions']:
+                    cv2.putText(frame, str(label['emotion']['title']) + ' (%' + str(label['emotion']['percent']) + ')',
+                                (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, .4, (0, 0, 255), 1)
 
                 # print(label)
 
@@ -117,4 +130,7 @@ class FaceDetect:
                         cv2.rectangle(roi_color, (sx, sy), (sx + sw, sy + sh), (0, 0, 255), 2)
 
         # Oluşturulan yeni görüntüyü çıktı olarak veriyoruz
-        return frame
+        return {
+            'frame': frame,
+            'label': label
+        }

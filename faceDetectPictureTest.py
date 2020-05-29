@@ -12,8 +12,10 @@ def main():
     # Yüz tanıma sınıfımızı kullanabilmek için bir nesne oluşturuyoruz
     face_detect = FaceDetect()
 
+    detect = face_detect.run(frame)['frame']
+
     # Görüntü çıktısını alıyoruz
-    cv2.imshow('frame', face_detect.run(frame))
+    cv2.imshow('frame', detect)
 
     # Kapanması için bir tuşa basılmasını bekle
     cv2.waitKey(0)
