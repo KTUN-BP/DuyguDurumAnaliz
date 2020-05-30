@@ -104,12 +104,12 @@ class FaceDetect:
                 # Cinsiyet verisini görüntüye yazdırıyoruz
                 if gender_predict.argmax() in options['genders']:
                     cv2.putText(frame, str(label['gender']['title']) + ' (%' + str(label['gender']['percent']) + ')',
-                                (x, y - 20), cv2.FONT_HERSHEY_SIMPLEX, .4, (0, 0, 255), 1)
+                                (x, y - 30), cv2.FONT_HERSHEY_SIMPLEX, .6, (0, 0, 255), 2)
 
                 # Duygu verisini görüntüye yazdırıyoruz
                 if emotion_predict.argmax() in options['emotions']:
                     cv2.putText(frame, str(label['emotion']['title']) + ' (%' + str(label['emotion']['percent']) + ')',
-                                (x, y - 10), cv2.FONT_HERSHEY_SIMPLEX, .4, (0, 0, 255), 1)
+                                (x, y - 15), cv2.FONT_HERSHEY_SIMPLEX, .6, (0, 0, 255), 2)
 
                 # print(label)
 

@@ -248,16 +248,6 @@
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButtonSave">
-         <property name="enabled">
-          <bool>false</bool>
-         </property>
-         <property name="text">
-          <string>KAYDET</string>
-         </property>
-        </widget>
-       </item>
-       <item>
         <widget class="QPushButton" name="pushButtonClose">
          <property name="text">
           <string>KAPAT</string>
