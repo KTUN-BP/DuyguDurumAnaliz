@@ -1,6 +1,6 @@
 # Python-OpenCV Duygu Durum Analizi
 
-![Sunum](https://i.ibb.co/PTyNRsf/splash.png)
+![Sunum](https://i.ibb.co/sWXqWQb/splash.png)
 
 ## Proje Tanımı
 Bir görüntü kaynağından elde edilen video ve fotoğraflar üzerindeki insan yüzlerinden duygu durum analizi yapan program.
@@ -11,7 +11,7 @@ Bir görüntü kaynağından elde edilen video ve fotoğraflar üzerindeki insan
 ## Geliştirenler
 - [Muharrem ERİN - 185036024](https://github.com/mewebstudio)
 - [Berk Mükremin KARAÇAYIR - 185036070](https://github.com/berkmkaracayir)
-- [Mahmut ÖZDAĞ - 185036040](https://github.com/Ozdg)
+- [Mahmut ÖZDAĞ - 185036044](https://github.com/Ozdg)
 
 ## Altyapı
 - [Python 3.7+](https://www.python.org/)
